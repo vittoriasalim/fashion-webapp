@@ -7,7 +7,6 @@ export const ImageData = [
       
 
     },{
-    
         title:"BALL GOWN COUTURE SAMPLE B02",
         image: "asset/product-sample.png",
         price: "100.00",

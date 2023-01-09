@@ -19,37 +19,32 @@ const ProductSlider = ({slides})=>{
     return (
     
    
-        <div class="container-slider">
+        <section class="section">
+            <a class="prev" onClick={prevSlide}>❮</a>
+            <a class="next" onClick={nextSlide}>❯</a>
 
                 {ImageData.map((slide,index)=>{
 
-                    return(<div class="container-product slides fade" className={index===current? 'container-product slides fade active' : 'slides'} key={index}>
+                    return(<div class="product__container container grid slides fade" className={index===current? 'product__container container grid slides fade active' : 'slides'} key={index}>
                         {index === current && (<>
-                        <div class="content1-product">
+                        <div class="product__data">
                             <p class="product-title" id="product_title">{slide.title}</p>
                             <div class="product-subs">
-                            <p class="product-subtitle" id="product_price">PRICE   : {slide.price}</p>
-                            <p class="product-subtitle" id="product_deposit">DEPOSIT : {slide.deposit}</p>
-                            <button class="but-classic product-button"><a class="but-link product-link-but" href="https://forms.gle/pR6whCCizVBn9fVL7">BOOK NOW</a></button>
-                            </div>
+                            <p class="product-subtitle" id="">PRICE   : {slide.price}</p>
+                            <p class="product-subtitle" id="">DEPOSIT : {slide.deposit}</p>
+                            <button class="but-classic product-button"><a class="but-link product-link-but" href="https://form.jotform.com/230085853801454">BOOK NOW</a></button>
                         </div>
-                        <div class="content2 content2-product">
-                        <img src="asset/Dot1.png" class="dot1 dot1-product" alt="dot"></img>
-                        <img src="asset/Dot2.png" class="dot2 dot2-product" alt="dot"></img> 
+                        </div>
                         <img src= {slide.image} alt = "product-images" class="slider-image" id="product_image" />
-                        </div></>)}
+                        <button class="but-classic product-button product-active"><a class="but-link product-link-but" href="https://form.jotform.com/230085853801454">BOOK NOW</a></button></>)}
+                        
                         
                     
                     </div>);
                         
                 })}
 
-        
-            <a class="prev" onClick={prevSlide}>❮</a>
-            <a class="next" onClick={nextSlide}>❯</a>
-
-
-        </div>
+        </section>
       
       
         
