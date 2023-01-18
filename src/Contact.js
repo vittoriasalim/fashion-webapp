@@ -1,9 +1,11 @@
 
-import './App.css';
+
 import Navigation from './Navigation';
 
 
 import Footer from './Footer';
+import ContactForm from './ContactForm';
+
 
 
 function Contact() {
@@ -11,9 +13,8 @@ function Contact() {
   return (
     <>
     <Navigation />
+    <ContactForm/>
     
-
-
    
     <Footer />
     </>

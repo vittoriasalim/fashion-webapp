@@ -1,9 +1,19 @@
-
 import React, {useState} from 'react';
-import { ImageData } from './image-data';
+import Papa from "papaparse";
 
-const ProductSlider = ({slides})=>{
+const ProductSlider = ()=>{
+    const [data, setData] = useState({});
+    Papa.parse("https://docs.google.com/spreadsheets/d/17QoJbVYXoWbxJDHtv303OeDaMXaU7PsPds4IbSN53Hs/export?format=csv", {
+        download: true,
+        header:true,
+        complete: (results) => {
+        setData(results.data);
+        },
+    });
+    const slides = Array.from(data);
     const [current , setCurrent] =useState(0);
+    
+    
 
     const length = slides.length;
     const prevSlide = () => {
@@ -12,18 +22,17 @@ const ProductSlider = ({slides})=>{
     const nextSlide = () => {
         setCurrent(current===length-1 ? 0 : current+1);
     };
-    if (!Array.isArray(slides)|| slides.length == 0){
+    if (!Array.isArray(slides)|| slides.length === 0){
         return null;
     }
 
     return (
-    
-   
+
         <section class="section">
             <a class="prev" onClick={prevSlide}>❮</a>
             <a class="next" onClick={nextSlide}>❯</a>
 
-                {ImageData.map((slide,index)=>{
+                {slides.map((slide,index)=>{
 
                     return(<div class="product__container container grid slides fade" className={index===current? 'product__container container grid slides fade active' : 'slides'} key={index}>
                         {index === current && (<>
@@ -35,20 +44,14 @@ const ProductSlider = ({slides})=>{
                             <button class="but-classic product-button"><a class="but-link product-link-but" href="https://form.jotform.com/230085853801454">BOOK NOW</a></button>
                         </div>
                         </div>
-                        <img src= {slide.image} alt = "product-images" class="slider-image" id="product_image" />
+                        <img src={slide.image} alt = "product-images" class="slider-image" id="product_image" />
                         <button class="but-classic product-button product-active"><a class="but-link product-link-but" href="https://form.jotform.com/230085853801454">BOOK NOW</a></button></>)}
-                        
-                        
-                    
                     </div>);
                         
                 })}
 
         </section>
-      
-      
         
     );
 }
 export default ProductSlider;
-

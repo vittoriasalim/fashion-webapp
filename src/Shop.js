@@ -3,7 +3,6 @@ import './App.css';
 import Navigation from './Navigation';
 
 import React,{useState,useEffect} from 'react';
-import { ImageData } from './image-data';
 
 
 
@@ -18,7 +17,7 @@ function Shop() {
   return (
     <>
     <Navigation />
-    <ProductSlider slides={ImageData}/>
+    <ProductSlider/>
     
     <Footer />
 
