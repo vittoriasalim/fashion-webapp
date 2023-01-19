@@ -1,31 +1,39 @@
 
 import {BrowserRouter as Router, Routes, Route,Link} from "react-router-dom"
-import './App.css';
-import Navigation from './Navigation';
+import './index.css';
+import './main.js';
+// import Header from "./components/Header";
+import Home from "./components/Home";
 
-
-import Home from './Home';
-import Shop from './Shop';
-import About from './About';
-import Contact from './Contact';
-
-
+import About from "./components/About";
+import Service from './components/Service';
+import Shop from "./components/Shop";
+import Contact from './components/ Contact';
 
 function App() {
   return (
 
-    <Router>
+    // <Router>
 
+    //   <Routes>
+    //   <Route path="/" element={<Home />}/>
+    //   <Route path="/shop" element={<Shop />}/>
+    //   <Route path="/about" element={<About />}/>
+    //   <Route path="/contact" element={<Contact />}/>
+    //   </Routes>
+    // </Router>
+    <>
+    {/* <Router>
       <Routes>
-      <Route path="/" element={<Home />}/>
-      <Route path="/shop" element={<Shop />}/>
-      <Route path="/about" element={<About />}/>
-      <Route path="/contact" element={<Contact />}/>
+      <Route path="/bespoke" element={<Bespoke />}/>
       </Routes>
-    </Router>
-
- 
-    
+    </Router> */}
+    <Home></Home>
+    <Service></Service>
+    <Shop></Shop>
+    <About></About>
+    <Contact></Contact>    
+    </>
   );
 }
 
