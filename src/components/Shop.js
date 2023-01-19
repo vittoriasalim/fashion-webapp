@@ -1,4 +1,6 @@
 
+
+
 import '../index.css';
 import Papa from 'papaparse';
 import React, {useState} from 'react';
@@ -59,7 +61,7 @@ const Shop =()=>{
                 <h3 class="menu__name">{slide.title}</h3>
                 <span class="menu__detail">Deposit : {slide.deposit}</span>
                 <span class="menu__preci">{slide.price}</span>
-                <a href="https://form.jotform.com/230085853801454" class="button menu__button"><i class='bx bx-cart-alt'></i> BOOK NOW</a>
+                <a href="https://form.jotform.com/230085853801454" class="button menu__button">BOOK NOW <i class='menu-icon bx bx-cart-alt'></i></a>
             </div>)}
         </div>
         );

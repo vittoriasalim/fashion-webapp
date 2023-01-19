@@ -7,7 +7,7 @@
 
   /*========== Colors ==========*/
   --first-color:  hsl(35, 64%, 54%);
-  --first-color-alt: hsl(19, 64%, 52%);
+  --first-color-alt: hsl(36, 54%, 62%);
   --title-color: #393939;
   --text-color: #707070;
   --text-color-light: #A6A6A6;
@@ -329,7 +329,7 @@ img{
 
 /*========== MENU ==========*/
 .menu__container{
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
   justify-content: center;
 }
 .menu-slider{
@@ -366,7 +366,7 @@ img{
 }
 
 .menu__img{
-  width: 100px;
+  width: 300px;
   align-self: center;
   margin-bottom: var(--mb-2);
   border-radius: .5rem;
@@ -392,13 +392,17 @@ img{
 
 .menu__button{
 
-  position: absolute;
-  bottom: 0;
-  right: 0;
   display: flex;
-  padding: .625rem .813rem;
-  border-radius: .5rem 0 .5rem 0;
+  justify-content: center;
+  /* padding: .625rem ; */
+  border-radius: .5rem ;
+  margin-top:1rem;
+  font-size:12px;
+
   
+}
+.menu-icon{
+  font-size: 18px;
 }
 
 /*========== APP ==========*/
@@ -548,14 +552,15 @@ img{
   }
 
   .menu__container{
-    grid-template-columns: repeat(3, 210px);
-    column-gap: 4rem;
+    display: flex;
+    justify-content: center;
   }
   .menu__content{
     padding: 1.5rem;
   }
   .menu__img{
-    width: 130px;
+   
+    width: 500px;
   }
 
   .app__store{
@@ -577,6 +582,7 @@ img{
   .app__container{
     column-gap: 7rem;
   }
+  
 }
 
 /* For tall screens on mobiles y desktop*/
